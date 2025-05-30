@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="brand.png" style="border-radius=15px;">
-    <source media="(prefers-color-scheme: light)" srcset="brand.png" style="border-radius=15px;">
-    <img width=60% alt="Shows a black logo in light color mode and a white one in dark color mode." src="brand.png" style="border-radius=15px;">
+    <source media="(prefers-color-scheme: dark)" srcset="web/assets/logo.png" style="border-radius=15px;">
+    <source media="(prefers-color-scheme: light)" srcset="web/assets/logo.png" style="border-radius=15px;">
+    <img width=60% alt="Shows a black logo in light color mode and a white one in dark color mode." src="web/assets/logo.png" style="border-radius=15px;">
   </picture>
 </p> 
 

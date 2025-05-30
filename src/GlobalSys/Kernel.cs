@@ -1,3 +1,11 @@
+/* 
+ * 
+ * this operating system was developed by pmg team, yostar & nexon company
+ * © 2025 the NexonKernel project
+ * 
+ * 
+ */
+
 using System;
 using System.IO;
 using System.Text;
@@ -9,7 +17,7 @@ using Cosmos.System.Network.Config;
 using Cosmos.System.Network.IPv4.UDP.DNS;
 using Cosmos.System.Network.IPv4;
 using NexonKernel.Interface.Gui;
-using NexonKernel.FileSystem.Installer;
+using NexonKernel.FileSystem;
 
 namespace NexonKernel {
     public class kernel : Sys.Kernel {
@@ -40,7 +48,7 @@ namespace NexonKernel {
             Console.WriteLine("[SYSTEM] Checking the memory......");
             Console.WriteLine("Done.");
             Console.WriteLine("Welcome To "+ConsoleColor.Cyan+"NexonKernel");
-            Login();           
+            RunAutorunScript(GetAutorunScript());
         }
 
         protected override void Run() {
@@ -89,6 +97,24 @@ namespace NexonKernel {
                     Console.WriteLine($"Command '{words[0]}' Is not found in the command list or program not available. make sure you command or program are added, and try again.");
                     break;
             }*/
+            private void RunAutorunScript(List<string> script)
+            {
+                foreach (var line in script)
+                {
+                    var command = line.Trim();
+                    if (string.IsNullOrEmpty(command)) continue;
+
+                    commandManager.ExecuteCommand(command);
+                }
+            }
+            private List<string> GetAutorunScript()
+            {
+                // You can replace this with reading from a file (e.g., 0:\autorun.txt) if needed
+                return new List<string>
+                {
+                    "InitGui",
+                };
+            }
         }
     }
 }

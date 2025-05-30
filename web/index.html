@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official NexonKernel Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<style>
+* {
+  font-family: 'Comic Sans MS', 'Comic Sans'
+}
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Comic Sans';
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.logo img {
+  height: 40px;
+}
+
+.rainbowfade{
+  animation: colorRotate 4.5s linear 0s infinite;
+}
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  transition: left 0.3s;
+  transition-timing-function: ease-out;
+  z-index: 10;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  color: #00ccff;
+  text-decoration: none;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.catchphrase {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: -100px;
+}
+
+.promos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.promo-card {
+  background: rgba(255, 255, 255, 0.85);
+  color: black;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.promo-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.store-buttons img {
+  width: 150px;
+  margin: 0 10px;
+}
+</style>
+<script>
+function toggleMenu() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+}
+</script>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Nexon Kernel Logo" />
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <a href="#">Introduction</a>
+    <a href="#">How to use</a>
+    <a href="#">Development</a>
+    <a href="#">Documentation</a>
+    <a href="#">Credits</a>
+    <a href="#">About NexonKernel Project</a>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <img src="assets/character.png" alt="Character Art" class="hero-image" />
+      <div class="catchphrase">Nah I'm lazy to write the catchphrase 🫠🫠</div>
+    </div>
+
+    <section class="promos">
+      <div class="promo-card">
+        <img src="assets/promo1.jpg" alt="Promo 1" />
+        <p class="rainbowfade">i'm so lazy to write 🫠🫠</p>
+      </div>
+      <div class="promo-card">
+        <img src="assets/promo2.jpg" alt="Promo 2" />
+        <p>i'm very lazy to write 🫠🫠</p>
+      </div>
+    </section>
+
+    <div class="store-buttons">
+      <a href="https://github.com/pmgdev64/Nexon_Kernel"><img src="assets/github.png" style="width: 32px; height: 32px" alt="App Store" /></a>
+      <a href="https://youtube.com/@pmgdev64"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" style="width: 45px; height: 32px" alt="Google Play" /></a>
+    </div>
+  </main>
+
+</body>
+</html>
